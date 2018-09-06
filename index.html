@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class=loader>
+    </div>
+    <div class="firstPage">
+        <div class="row" id="header">
+            <div class="col-sm-6">
+                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            </div>
+            <div class="col-sm-6">
+                <h1> Welcome to NYSL</h1>
+            </div>
+        </div>
+        <div class="menuTitle">
+            <h1>Menu</h1>
+        </div>
+        <!--
+        <div id="curly-brace">
+            <div id="left" class="brace"></div>
+            <div id="right" class="brace"></div>
+        </div>
+-->
+        <ul class= "menu">
+            <li>
+                <button>Games</button>
+            </li>
+            <li>
+                <button>Location</button>
+            </li>
+            <li>
+                <button>Contact</button>
+            </li>
+            <li>
+                <button>Chat</button>
+            </li>
+            </li>
+
+    </div>
+    <div class="gamesPage">
+        <div class="row" id="header">
+            <div class="col-sm-6">
+                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            </div>
+            <div class="col-sm-6">
+                <h1>NYSL</h1>
+            </div>
+        </div>
+        <div class="searcher">
+            <input type="text" placeholder="Team name or Date">
+        </div>
+        <div>
+            <!--con un v-for que me cree botones de cada partido y el input me los filtre por fecha y nombre de equipo. una vez pulse en un juego, siguiente pantalla-->
+        </div>
+    </div>
+    <div class="gameDetailsPage">
+        <div class="row" id="header">
+            <div class="col-sm-6">
+                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            </div>
+            <div class="col-sm-6">
+                <h1>NYSL</h1>
+            </div>
+        </div>
+        <div>
+            <h1>Game tal</h1>
+        </div>
+        <div>
+            fecha
+            hora
+        </div>
+        <div>
+            <button>Location</button>
+        </div>
+    </div>
+    <div class="locationMapPage">
+        <div class="row" id="header">
+            <div class="col-sm-6">
+                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            </div>
+            <div class="col-sm-6">
+                <h1>NYSL</h1>
+            </div>
+        </div>
+        <div>
+            <h1>Location tal</h1>
+        </div>
+        <div>
+            Mapa
+        </div>
+    </div>
+    <div class="locationsPage">
+        <div class="row" id="header">
+            <div class="col-sm-6">
+                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            </div>
+            <div class="col-sm-6">
+                <h1>NYSL</h1>
+            </div>
+        </div>
+        <div>
+            <h1>Locations</h1>
+        </div>
+        <div>
+            <!--Un v-for con todas las localizaciones que cuando pulse en ellas me lleve a locationMapPage de esa localización.-->
+        </div>
+    </div>
+    <div class="contactPage">
+        <div class="row" id="header">
+            <div class="col-sm-6">
+                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            </div>
+            <div class="col-sm-6">
+                <h1>NYSL</h1>
+            </div>
+        </div>
+        <div>
+            <h1>Contact</h1>
+        </div>
+        <div>
+            Telephone number
+            E-mail
+        </div>
+    </div>
+
+</body>
+
+</html>
