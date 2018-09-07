@@ -14,7 +14,7 @@
     <div class=loader>
     </div>
     <div class="firstPage">
-        <div class="row" id="header">
+        <div class="row" id="header1">
             <div class="col-sm-6">
                 <img src="Images/logo.jpg.png" alt="logo_NYSL">
             </div>
@@ -31,7 +31,7 @@
             <div id="right" class="brace"></div>
         </div>
 -->
-        <ul class= "menu">
+        <ul class="menu">
             <li>
                 <button>Games</button>
             </li>
@@ -44,7 +44,7 @@
             <li>
                 <button>Chat</button>
             </li>
-            </li>
+        </ul>
 
     </div>
     <div class="gamesPage">
@@ -69,7 +69,9 @@
                 <img src="Images/logo.jpg.png" alt="logo_NYSL">
             </div>
             <div class="col-sm-6">
-                <h1>NYSL</h1>
+                <div class="nyslTitle">
+                    <h1>NYSL</h1>
+                </div>
             </div>
         </div>
         <div>
@@ -132,6 +134,19 @@
             E-mail
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDcIoVEa_Zk5VqnKtkxamxaM1uhAtokUCY",
+            authDomain: "mobile-web-application.firebaseapp.com",
+            databaseURL: "https://mobile-web-application.firebaseio.com",
+            projectId: "mobile-web-application",
+            storageBucket: "",
+            messagingSenderId: "588045852453"
+        };
+        firebase.initializeApp(config);
+    </script>
 
 </body>
 
