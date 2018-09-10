@@ -13,141 +13,152 @@
 <body>
     <div class=loader>
     </div>
-    <div class="firstPage">
-        <div class="row" id="header1">
-            <div class="col-sm-6">
-                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+    <div id="app">
+        <div class="firstPage">
+            <div class="row" id="header1">
+                <div class="col-sm-6">
+                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                </div>
+                <div class="col-sm-6">
+                    <h1> Welcome to NYSL</h1>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <h1> Welcome to NYSL</h1>
+            <div class="menuTitle">
+                <h1>Menu</h1>
             </div>
-        </div>
-        <div class="menuTitle">
-            <h1>Menu</h1>
-        </div>
-        <!--
+            <!--
         <div id="curly-brace">
             <div id="left" class="brace"></div>
             <div id="right" class="brace"></div>
         </div>
 -->
-        <ul class="menu">
-            <li>
-                <button>Games</button>
-            </li>
-            <li>
-                <button>Location</button>
-            </li>
-            <li>
-                <button>Contact</button>
-            </li>
-            <li>
-                <button>Chat</button>
-            </li>
-        </ul>
+            <ul class="menu">
+                <li>
+                    <button>Games</button>
+                </li>
+                <li>
+                    <button>Location</button>
+                </li>
+                <li>
+                    <button>Contact</button>
+                </li>
+                <li>
+                    <button>Chat</button>
+                </li>
+            </ul>
 
-    </div>
-    <div class="gamesPage">
-        <div class="row" id="header">
-            <div class="col-sm-6">
-                <img src="Images/logo.jpg.png" alt="logo_NYSL">
-            </div>
-            <div class="col-sm-6">
-                <h1>NYSL</h1>
-            </div>
         </div>
-        <div class="searcher">
-            <input type="text" placeholder="Team name or Date">
-        </div>
-        <div>
-            <!--con un v-for que me cree botones de cada partido y el input me los filtre por fecha y nombre de equipo. una vez pulse en un juego, siguiente pantalla-->
-        </div>
-    </div>
-    <div class="gameDetailsPage">
-        <div class="row" id="header">
-            <div class="col-sm-6">
-                <img src="Images/logo.jpg.png" alt="logo_NYSL">
-            </div>
-            <div class="col-sm-6">
-                <div class="nyslTitle">
+        <div class="gamesPage">
+            <div class="row" id="header">
+                <div class="col-sm-6">
+                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                </div>
+                <div class="col-sm-6">
                     <h1>NYSL</h1>
                 </div>
             </div>
-        </div>
-        <div>
-            <h1>Game tal</h1>
-        </div>
-        <div>
-            fecha
-            hora
-        </div>
-        <div>
-            <button>Location</button>
-        </div>
-    </div>
-    <div class="locationMapPage">
-        <div class="row" id="header">
-            <div class="col-sm-6">
-                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            <div class="searcher">
+                <input type="text" id="myInput" onkeyup="app.filterFunction()" placeholder="Team name or Date">
             </div>
-            <div class="col-sm-6">
-                <h1>NYSL</h1>
+            <ul id="myUL">
+                <li v-for="game in data">
+                    <button>{{game.teamsA}} VS {{game.teamsB}} </button>
+                </li>
+            </ul>
+        </div>
+        <div class="gameDetailsPage">
+            <div class="row" id="header">
+                <div class="col-sm-6">
+                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                </div>
+                <div class="col-sm-6">
+                    <div class="nyslTitle">
+                        <h1>NYSL</h1>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div>
-            <h1>Location tal</h1>
-        </div>
-        <div>
-            Mapa
-        </div>
-    </div>
-    <div class="locationsPage">
-        <div class="row" id="header">
-            <div class="col-sm-6">
-                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+            <div class="menuTitle">
+                <h1>{{data[0].teamsA}} VS {{data[0].teamsB}} </h1>
             </div>
-            <div class="col-sm-6">
-                <h1>NYSL</h1>
+            <div>
+                <h1>Date: {{data[0].date}}</h1>
+                <h1>Time: {{data[0].time}}</h1>
+            </div>
+            <div id="locationButton">
+                <button>{{data[0].location}}</button>
             </div>
         </div>
-        <div>
-            <h1>Locations</h1>
-        </div>
-        <div>
-            <!--Un v-for con todas las localizaciones que cuando pulse en ellas me lleve a locationMapPage de esa localización.-->
-        </div>
-    </div>
-    <div class="contactPage">
-        <div class="row" id="header">
-            <div class="col-sm-6">
-                <img src="Images/logo.jpg.png" alt="logo_NYSL">
+        <div class="locationMapPage">
+            <div class="row" id="header">
+                <div class="col-sm-6">
+                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                </div>
+                <div class="col-sm-6">
+                    <h1>NYSL</h1>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <h1>NYSL</h1>
+            <div class="menuTitle">
+                <h1>{{data[0].location}}</h1>
+            </div>
+            <div>
+                <iframe class="urlmap" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2969.6568344535567!2d-87.63125923514261!3d41.90023672200859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAJ+Katzenmaier+Elementary%0924+W.+Walton+St.%2C+Chicago%2C+IL+60610!5e0!3m2!1ses!2ses!4v1532439742531"></iframe>
             </div>
         </div>
-        <div>
-            <h1>Contact</h1>
+        <div class="locationsPage">
+            <div class="row" id="header">
+                <div class="col-sm-6">
+                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                </div>
+                <div class="col-sm-6">
+                    <h1>NYSL</h1>
+                </div>
+            </div>
+            <div class="menuTitle">
+                <h1>Locations</h1>
+            </div>
+            <ul id="myUL">
+                <li v-for="game in data">
+                    <button>{{game.location}} </button>
+                </li>
+            </ul>
         </div>
-        <div>
-            Telephone number
-            E-mail
+        <div class="contactPage">
+            <div class="row" id="header">
+                <div class="col-sm-6">
+                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                </div>
+                <div class="col-sm-6">
+                    <h1>NYSL</h1>
+                </div>
+            </div>
+            <div class="menuTitle">
+                <h1>Contact</h1>
+            </div>
+            <ul>
+            <li class="phone">
+                <h1>Phone: </h1><p>(630) 690-8132</p>
+            </li>
+            <li class="email">
+                <h1>E-mail: </h1><p><a href="mailto:michael.randall@chisoccer.org?subject=Question">michael.randall@chisoccer.org</a></p>
+            </li>
+                </ul>
         </div>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDcIoVEa_Zk5VqnKtkxamxaM1uhAtokUCY",
-            authDomain: "mobile-web-application.firebaseapp.com",
-            databaseURL: "https://mobile-web-application.firebaseio.com",
-            projectId: "mobile-web-application",
-            storageBucket: "",
-            messagingSenderId: "588045852453"
-        };
-        firebase.initializeApp(config);
-    </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDcIoVEa_Zk5VqnKtkxamxaM1uhAtokUCY",
+                authDomain: "mobile-web-application.firebaseapp.com",
+                databaseURL: "https://mobile-web-application.firebaseio.com",
+                projectId: "mobile-web-application",
+                storageBucket: "",
+                messagingSenderId: "588045852453"
+            };
+            firebase.initializeApp(config);
 
+        </script>
 </body>
 
 </html>

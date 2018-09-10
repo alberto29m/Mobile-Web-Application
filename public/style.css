@@ -19,6 +19,7 @@
     color: white;
     text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
+
 #header {
     background-color: red;
     width: 100%;
@@ -40,9 +41,10 @@
     color: white;
     text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
-.nyslTitle{
+
+.nyslTitle {
     justify-content: flex-start;
-    display:flex;
+    display: flex;
 }
 
 .menuTitle {
@@ -90,6 +92,83 @@
     size: 50%;
 }
 
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myUL li {
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#myUL li button {
+    border: 2px solid #ddd;
+    font-weight: 900;
+    background-color: #f6f6f6;
+    padding: 5%;
+    text-decoration: none;
+    font-size: 150%;
+    color: black;
+    width: 100%;
+    display: block;
+}
+
+#myUL li button:hover:not(.header) {
+    background-color: #eee;
+}
+
+#locationButton {
+    padding-top: 10%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    ;
+}
+
+#locationButton button {
+    border: 5px solid #ddd;
+    border-radius: 59px 59px 59px 59px;
+    -moz-border-radius: 59px 59px 59px 59px;
+    -webkit-border-radius: 59px 59px 59px 59px;
+    font-weight: 900;
+    background-color: #fb060657;
+    padding: 9%;
+    text-decoration: none;
+    font-size: 200%;
+    color: black;
+    width: 100%;
+    display: block;
+}
+iframe{
+    height: 500px;
+    padding: 8%;
+    display:block;
+}
+.phone{
+    padding-top:10%;
+    font-weight: 800;
+    font-size: 150%;
+}
+.email{
+    font-weight: 800;
+    padding-top:10%;
+    padding-bottom: 10%;
+    font-size: 130%;
+}
 
 /*
 #curly-brace
