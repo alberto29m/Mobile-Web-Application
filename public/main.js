@@ -1,7 +1,8 @@
 var app = new Vue({
     el: "#app",
     data: {
-        data: []
+        data1: [],
+        data2: []
 
     },
     created: function () {
@@ -9,7 +10,7 @@ var app = new Vue({
     },
     methods: {
         getData: function () {
-            fetch("https:////api.jsonbin.io/b/5b964b3bd6fe677c48d81685", {
+            fetch("https://api.jsonbin.io/b/5b97701ddb948c68635f4402", {
 
                 method: "GET",
 
@@ -22,9 +23,11 @@ var app = new Vue({
                 // signal a server error to the chain
                 throw new Error(response.statusText);
             }).then(function (json) {
-                app.data = json.gamesData;
-                console.log(app.data);
-
+                app.loader();
+                app.data1 = json.gamesData;
+                console.log(app.data1);
+                app.data2 = json.allLocations;
+                console.log(app.data2);
 
 
 
@@ -48,6 +51,12 @@ var app = new Vue({
                     li[i].style.display = "none";
                 }
             }
-        }
+        },
+        loader: function(){
+        var containerLoader = document.getElementById("containerLoader");
+//        setTimeout(function(){
+            containerLoader.classList.add("cerrar");
+//        },);    
+    }
     }
 })
