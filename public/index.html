@@ -3,20 +3,20 @@
 
 <head>
     <link href="style.css" rel="stylesheet">
-    <link rel="shortcut icon" sizes="196x196" href="icon-196x196.png">
+    <link rel="shortcut icon" sizes="196x196" href="Images/logo.png">
     <meta charset="utf-8">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
-    <link rel="apple-touch-startup-image" href="http://3wga6448744j404mpt11pbx4.wpengine.netdna-cdn.com/startup-image.png">
+    <link rel="apple-touch-icon" href="Images/logo.jpg">
+    <link rel="apple-touch-startup-image" href="Images/logo.png">
     <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Kojitsu">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+    <link rel="apple-touch-icon" href="Images/logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="mobile-web-app-capable" content="yes">
@@ -26,16 +26,16 @@
 
 <body>
     <div class="containerLoader" id="containerLoader">
-        <div class="preloader">
+        <div id="preloader" class="preloader">
             <p>Loading...</p>
             <h1>NYSL</h1>
         </div>
     </div>
     <div id="app">
-        <div class="firstPage">
+        <div id="firstPage">
             <div class="row" id="header1">
                 <div class="col-sm-6">
-                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                    <img src="Images/logo.png" alt="logo_NYSL">
                 </div>
                 <div class="col-sm-6">
                     <h1> Welcome to NYSL</h1>
@@ -52,13 +52,13 @@
 -->
             <ul class="menu">
                 <li>
-                    <button>Games</button>
+                    <button @click="changeMenuToGames" >Games</button>
                 </li>
                 <li>
-                    <button>Location</button>
+                    <button @click = "changeMenuToLocations">Locations</button>
                 </li>
                 <li>
-                    <button>Contact</button>
+                    <button @click = "changeMenuToContact">Contact</button>
                 </li>
                 <li>
                     <button>Chat</button>
@@ -66,10 +66,10 @@
             </ul>
 
         </div>
-        <div class="gamesPage">
-            <div class="row" id="header">
+        <div id="gamesPage">
+            <div class="row" id="header" @click = "changeAllPagesToMenu">
                 <div class="col-sm-6">
-                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                    <img src="Images/logo.png" alt="logo_NYSL">
                 </div>
                 <div class="col-sm-6">
                     <h1>NYSL</h1>
@@ -80,14 +80,14 @@
             </div>
             <ul id="myUL">
                 <li v-for="game in data1">
-                    <button>{{game.teamsA}} VS {{game.teamsB}} </button>
+                    <button @click="changeGameToGameDetails">{{game.teamsA}} VS {{game.teamsB}} </button>
                 </li>
             </ul>
         </div>
-        <div class="gameDetailsPage">
-            <div class="row" id="header">
+        <div id="gameDetailsPage">
+            <div class="row" id="header" @click = "changeAllPagesToMenu">
                 <div class="col-sm-6">
-                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                    <img src="Images/logo.png" alt="logo_NYSL">
                 </div>
                 <div class="col-sm-6">
                     <div class="nyslTitle">
@@ -112,10 +112,10 @@
             </div>
 -->
         </div>
-        <div class="locationMapPage">
-            <div class="row" id="header">
+        <div id="locationMapPage">
+            <div class="row" id="header" @click = "changeAllPagesToMenu">
                 <div class="col-sm-6">
-                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                    <img src="Images/logo.png" alt="logo_NYSL">
                 </div>
                 <div class="col-sm-6">
                     <h1>NYSL</h1>
@@ -127,13 +127,13 @@
             </div>
 -->
             <div>
-                <iframe class="urlmap" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2969.6568344535567!2d-87.63125923514261!3d41.90023672200859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAJ+Katzenmaier+Elementary%0924+W.+Walton+St.%2C+Chicago%2C+IL+60610!5e0!3m2!1ses!2ses!4v1532439742531"></iframe>
+                <iframe class="urlmap" src="{{sourceUrl}}"></iframe>
             </div>
         </div>
-        <div class="locationsPage">
-            <div class="row" id="header">
+        <div id="locationsPage">
+            <div class="row" id="header" @click = "changeAllPagesToMenu">
                 <div class="col-sm-6">
-                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                    <img src="Images/logo.png" alt="logo_NYSL">
                 </div>
                 <div class="col-sm-6">
                     <h1>NYSL</h1>
@@ -144,14 +144,14 @@
             </div>
             <ul id="myUL">
                 <li v-for="location in data2">
-                    <button>{{location.name}} </button>
+                    <button :id="location.name" @click="changeLocationsToLocationMap">{{location.name}} </button>
                 </li>
             </ul>
         </div>
-        <div class="contactPage">
-            <div class="row" id="header">
+        <div id="contactPage">
+            <div class="row" id="header" @click = "changeAllPagesToMenu">
                 <div class="col-sm-6">
-                    <img src="Images/logo.jpg.png" alt="logo_NYSL">
+                    <img src="Images/logo.png" alt="logo_NYSL">
                 </div>
                 <div class="col-sm-6">
                     <h1>NYSL</h1>
@@ -186,7 +186,6 @@
             messagingSenderId: "588045852453"
         };
         firebase.initializeApp(config);
-
     </script>
 </body>
 
