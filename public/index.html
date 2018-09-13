@@ -67,7 +67,7 @@
 
         </div>
         <div id="gamesPage">
-            <div class="row" id="header" @click = "changeAllPagesToMenu">
+            <div class="row"  id="header" @click = "changeAllPagesToMenu">
                 <div class="col-sm-6">
                     <img src="Images/logo.png" alt="logo_NYSL">
                 </div>
@@ -80,7 +80,7 @@
             </div>
             <ul id="myUL">
                 <li v-for="game in data1">
-                    <button @click="changeGameToGameDetails">{{game.teamsA}} VS {{game.teamsB}} </button>
+                    <button :id="game.location" :data-teamsA="game.teamsA" :data-teamsB="game.teamsB" :data-date="game.date" :data-time="game.time" :data-location="game.location" @click="changeGameToGameDetails">{{game.teamsA}} VS {{game.teamsB}} </button>
                 </li>
             </ul>
         </div>
@@ -95,22 +95,22 @@
                     </div>
                 </div>
             </div>
-            <!--
+            
             <div class="menuTitle">
-                <h1>{{data1[0].teamsA}} VS {{data1[0].teamsB}} </h1>
+                <h1>{{teamA}} VS {{teamB}} </h1>
             </div>
--->
-            <!--
-            <div>
-                <h1>Date: {{data1[0].date}}</h1>
-                <h1>Time: {{data1[0].time}}</h1>
+
+            
+            <div class= "date-time">
+                <h1>Date: </h1><p>{{date}}</p>
+                <h1>Time: </h1> <p>{{time}}</p>
             </div>
--->
-            <!--
+
+            
             <div id="locationButton">
-                <button>{{data1[0].location}}</button>
+                <button :id="location" @click="changeLocationsToLocationMap" >{{location}}</button>
             </div>
--->
+
         </div>
         <div id="locationMapPage">
             <div class="row" id="header" @click = "changeAllPagesToMenu">
@@ -121,13 +121,13 @@
                     <h1>NYSL</h1>
                 </div>
             </div>
-            <!--
+            
             <div class="menuTitle">
-                <h1>{{data1[0].location}}</h1>
+                <h1>{{tittleMap}}</h1>
             </div>
--->
+
             <div>
-                <iframe class="urlmap" src="{{sourceUrl}}"></iframe>
+                <iframe class="urlmap" :src="sourceUrl"></iframe>
             </div>
         </div>
         <div id="locationsPage">

@@ -3,7 +3,13 @@ var app = new Vue({
     data: {
         data1: [],
         data2: [],
-        sourceUrl: ""
+        sourceUrl: "",
+        tittleMap: "",
+        teamA: "",
+        teamB: "",
+        time: "",
+        date: "",
+        location: ""
 
     },
     created: function () {
@@ -62,110 +68,127 @@ var app = new Vue({
                 document.getElementById("preloader").style.display = "none";
             }, 2000);
         },
-        changeMenuToGames: function(){
+        changeMenuToGames: function () {
             var menu = document.getElementById("firstPage");
-            var gamePage=document.getElementById("gamesPage");
+            var gamePage = document.getElementById("gamesPage");
             var gameDetailsPage = document.getElementById("gameDetailsPage");
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
-            menu.style.display="none";
-            gameDetailsPage.style.display="none";
-            locationsPage.style.display="none";
-            mapPage.style.display="none";
-            contactPage.style.display="none";
-            gamePage.style.display="block";
+            menu.style.display = "none";
+            gameDetailsPage.style.display = "none";
+            locationsPage.style.display = "none";
+            mapPage.style.display = "none";
+            contactPage.style.display = "none";
+            gamePage.style.display = "block";
         },
-        changeMenuToLocations: function(){
+        changeMenuToLocations: function () {
             var menu = document.getElementById("firstPage");
-            var gamePage=document.getElementById("gamesPage");
+            var gamePage = document.getElementById("gamesPage");
             var gameDetailsPage = document.getElementById("gameDetailsPage");
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
-            menu.style.display="none";
-            gameDetailsPage.style.display="none";
-            locationsPage.style.display="block";
-            mapPage.style.display="none";
-            contactPage.style.display="none";
-            gamePage.style.display="none";
-            
+            menu.style.display = "none";
+            gameDetailsPage.style.display = "none";
+            locationsPage.style.display = "block";
+            mapPage.style.display = "none";
+            contactPage.style.display = "none";
+            gamePage.style.display = "none";
+
         },
-        changeMenuToContact: function(){
+        changeMenuToContact: function () {
             var menu = document.getElementById("firstPage");
-            var gamePage=document.getElementById("gamesPage");
+            var gamePage = document.getElementById("gamesPage");
             var gameDetailsPage = document.getElementById("gameDetailsPage");
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
-            menu.style.display="none";
-            gameDetailsPage.style.display="none";
-            locationsPage.style.display="none";
-            mapPage.style.display="none";
-            contactPage.style.display="block";
-            gamePage.style.display="none";
-            
+            menu.style.display = "none";
+            gameDetailsPage.style.display = "none";
+            locationsPage.style.display = "none";
+            mapPage.style.display = "none";
+            contactPage.style.display = "block";
+            gamePage.style.display = "none";
+
         },
-        changeAllPagesToMenu: function(){
+        changeAllPagesToMenu: function () {
             var menu = document.getElementById("firstPage");
-            var gamePage=document.getElementById("gamesPage");
+            var gamePage = document.getElementById("gamesPage");
             var gameDetailsPage = document.getElementById("gameDetailsPage");
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
-            menu.style.display="block";
-            gameDetailsPage.style.display="none";
-            locationsPage.style.display="none";
-            mapPage.style.display="none";
-            contactPage.style.display="none";
-            gamePage.style.display="none";
+            menu.style.display = "block";
+            gameDetailsPage.style.display = "none";
+            locationsPage.style.display = "none";
+            mapPage.style.display = "none";
+            contactPage.style.display = "none";
+            gamePage.style.display = "none";
         },
-        changeGameToGameDetails: function(){
+        changeGameToGameDetails: function () {
             var menu = document.getElementById("firstPage");
-            var gamePage=document.getElementById("gamesPage");
+            var gamePage = document.getElementById("gamesPage");
             var gameDetailsPage = document.getElementById("gameDetailsPage");
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
-            menu.style.display="none";
-            gamePage.style.display="none";
-            gameDetailsPage.style.display="block";
-            locationsPage.style.display="none";
-            mapPage.style.display="none";
-            contactPage.style.display="none";        
+            menu.style.display = "none";
+            gamePage.style.display = "none";
+            gameDetailsPage.style.display = "block";
+            locationsPage.style.display = "none";
+            mapPage.style.display = "none";
+            contactPage.style.display = "none";
+            this.changeToGameDetails();
         },
-        changeLocationsToLocationMap: function(){
+        changeLocationsToLocationMap: function () {
             var menu = document.getElementById("firstPage");
-            var gamePage=document.getElementById("gamesPage");
+            var gamePage = document.getElementById("gamesPage");
             var gameDetailsPage = document.getElementById("gameDetailsPage");
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
-            menu.style.display="none";
-            gamePage.style.display="none";
-            gameDetailsPage.style.display="none";
-            locationsPage.style.display="none";
-            mapPage.style.display="block";
-            contactPage.style.display="none";
-            app.changeID();
-            
+            menu.style.display = "none";
+            gamePage.style.display = "none";
+            gameDetailsPage.style.display = "none";
+            locationsPage.style.display = "none";
+            mapPage.style.display = "block";
+            contactPage.style.display = "none";
+            console.log(1, this)
+            this.changeToTheMap();
+
         },
-        changeID: function(){
-        var locationID = document.getElementById("location.name");
-        if(locationID == "AJ Katzenmaier"){
-            this.sourceUrl == this.data2[0].url;
-        }else if(locationID == "Greenbay"){
-            this.sourceUrl == this.data2[1].url;
-        }else if(locationID == "Howard A Yeager"){
-            this.sourceUrl == this.data2[2].url;
-        }else if(locationID == "Marjorie P Hart"){
-            this.sourceUrl == this.data2[3].url;
-        }else if(locationID == "North"){
-            this.sourceUrl == this.data2[4].url;
-        }else if(locationID == "South"){
-            this.sourceUrl == this.data2[5].url;
+        changeToTheMap: function () {
+            console.log(event.target.id);
+            var locationID = event.target.id;
+            if (locationID == "AJ Katzenmaier") {
+                this.sourceUrl = this.data2[0].url;
+                this.tittleMap = this.data2[0].name;
+            } else if (locationID == "Greenbay") {
+                this.sourceUrl = this.data2[1].url;
+                this.tittleMap = this.data2[1].name;
+            } else if (locationID == "Howard A Yeager") {
+                this.sourceUrl = this.data2[2].url;
+                this.tittleMap = this.data2[2].name;
+            } else if (locationID == "Marjorie P Hart") {
+                this.sourceUrl = this.data2[3].url;
+                this.tittleMap = this.data2[3].name;
+            } else if (locationID == "North") {
+                this.sourceUrl = this.data2[4].url;
+                this.tittleMap = this.data2[4].name;
+            } else if (locationID == "South") {
+                this.sourceUrl = this.data2[5].url;
+                this.tittleMap = this.data2[5].name;
+            }
+
+        },
+        changeToGameDetails: function () {
+            this.teamA = event.target.getAttribute('data-teamsA');
+            this.teamB = event.target.getAttribute('data-teamsB');
+            this.time = event.target.getAttribute('data-time');
+            this.date = event.target.getAttribute('data-date');
+            this.location = event.target.getAttribute('data-location');
+
         }
-        
-    }
     }
 })
