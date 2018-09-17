@@ -267,7 +267,7 @@
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 601px) and (max-width: 767px) {
     .containerLoader {
         position: absolute;
         top: 0;
@@ -422,10 +422,17 @@
     .menu {
         padding: 10%;
         list-style: none;
+        flex-wrap:wrap;
+        display:flex;
+        width: 100%;
     }
 
     .menu li {
         padding: 5%;
+        flex-direction: row;
+        flex-wrap:wrap;
+        display:flex;
+        width:50%;
 
     }
 
@@ -433,7 +440,7 @@
         font-weight: 1000;
         color: white;
         background-color: red;
-        width: 100%;
+        width: 240px;
         height: 60px;
         border-radius: 60px 60px 60px 60px;
         -moz-border-radius: 60px 60px 60px 60px;
@@ -552,7 +559,7 @@
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
     .containerLoader {
         position: absolute;
         top: 0;
@@ -850,7 +857,7 @@
         font-size: 350%;
     }
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
         .containerLoader {
         position: absolute;
         top: 0;
