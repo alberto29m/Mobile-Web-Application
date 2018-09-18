@@ -75,12 +75,14 @@ var app = new Vue({
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
+            var chatPage = document.getElementById("chatPage");
             menu.style.display = "none";
             gameDetailsPage.style.display = "none";
             locationsPage.style.display = "none";
             mapPage.style.display = "none";
             contactPage.style.display = "none";
             gamePage.style.display = "block";
+            chatPage.style.display="none";
         },
         changeMenuToLocations: function () {
             var menu = document.getElementById("firstPage");
@@ -89,12 +91,14 @@ var app = new Vue({
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
+            var chatPage = document.getElementById("chatPage");
             menu.style.display = "none";
             gameDetailsPage.style.display = "none";
             locationsPage.style.display = "block";
             mapPage.style.display = "none";
             contactPage.style.display = "none";
             gamePage.style.display = "none";
+            chatPage.style.display="none";
 
         },
         changeMenuToContact: function () {
@@ -104,12 +108,14 @@ var app = new Vue({
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
+            var chatPage = document.getElementById("chatPage");
             menu.style.display = "none";
             gameDetailsPage.style.display = "none";
             locationsPage.style.display = "none";
             mapPage.style.display = "none";
             contactPage.style.display = "block";
             gamePage.style.display = "none";
+            chatPage.style.display="none";
 
         },
         changeAllPagesToMenu: function () {
@@ -119,12 +125,14 @@ var app = new Vue({
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
+            var chatPage = document.getElementById("chatPage");
             menu.style.display = "block";
             gameDetailsPage.style.display = "none";
             locationsPage.style.display = "none";
             mapPage.style.display = "none";
             contactPage.style.display = "none";
             gamePage.style.display = "none";
+            chatPage.style.display="none";
         },
         changeGameToGameDetails: function () {
             var menu = document.getElementById("firstPage");
@@ -133,12 +141,14 @@ var app = new Vue({
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
+            var chatPage = document.getElementById("chatPage");
             menu.style.display = "none";
             gamePage.style.display = "none";
             gameDetailsPage.style.display = "block";
             locationsPage.style.display = "none";
             mapPage.style.display = "none";
             contactPage.style.display = "none";
+            chatPage.style.display="none";
             this.changeToGameDetails();
         },
         changeLocationsToLocationMap: function () {
@@ -148,15 +158,33 @@ var app = new Vue({
             var locationsPage = document.getElementById("locationsPage");
             var mapPage = document.getElementById("locationMapPage");
             var contactPage = document.getElementById("contactPage");
+            var chatPage = document.getElementById("chatPage");
             menu.style.display = "none";
             gamePage.style.display = "none";
             gameDetailsPage.style.display = "none";
             locationsPage.style.display = "none";
             mapPage.style.display = "block";
             contactPage.style.display = "none";
+            chatPage.style.display="none";
             console.log(1, this)
             this.changeToTheMap();
 
+        },
+        changeMenuToChat: function(){
+           var menu = document.getElementById("firstPage");
+            var gamePage = document.getElementById("gamesPage");
+            var gameDetailsPage = document.getElementById("gameDetailsPage");
+            var locationsPage = document.getElementById("locationsPage");
+            var mapPage = document.getElementById("locationMapPage");
+            var contactPage = document.getElementById("contactPage");
+            var chatPage = document.getElementById("chatPage");
+            menu.style.display = "none";
+            gamePage.style.display = "none";
+            gameDetailsPage.style.display = "none";
+            locationsPage.style.display = "none";
+            mapPage.style.display = "none";
+            contactPage.style.display = "none";
+            chatPage.style.display = "block";
         },
         changeToTheMap: function () {
             console.log(event.target.id);

@@ -44,12 +44,7 @@
             <div class="menuTitle">
                 <h1>Menu</h1>
             </div>
-            <!--
-        <div id="curly-brace">
-            <div id="left" class="brace"></div>
-            <div id="right" class="brace"></div>
-        </div>
--->
+
             <ul class="menu">
                 <li>
                     <button @click="changeMenuToGames">Games</button>
@@ -61,7 +56,7 @@
                     <button @click="changeMenuToContact">Contact</button>
                 </li>
                 <li>
-                    <button>Chat</button>
+                    <button @click="changeMenuToChat">Chat</button>
                 </li>
             </ul>
 
@@ -174,38 +169,21 @@
             </ul>
         </div>
         <div id="chatPage">
-            <form id="loginScreenForm">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="fullname" placeholder="Name*" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Email Address*" required>
-                </div>
-                <button type="submit" class="btn btn-block btn-primary">Start Chat</button>
-            </form>
-            <div class="chats">
-                <div class="loader-wrapper">
-                    <div class="loader">
-                        <span>{</span><span>}</span>
-                    </div>
-                </div>
-                <ul class="messages clearfix">
-                </ul>
-                <div class="input">
-                    <form class="form-inline" id="messageSupport">
-                        <div class="form-group">
-                            <input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </form>
-                </div>
+
+            <button id="login" class="btn btn-block btn-primary">Login</button>
+
+            <div class="chats" id="chat">
+                <div id="posts">YOU MUST BE LOGGED</div>
+                <input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
+
+                <button id="create-post"  class="btn btn-primary">Send</button>
             </div>
         </div>
     </div>
-    <script src = "chat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="main.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script src="main.js"></script>
+    <script src="chat.js"></script>
     <script>
         // Initialize Firebase
         var config = {

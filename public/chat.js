@@ -1,150 +1,97 @@
-document.getElementById("login").addEventListener("click", login);
+document.getElementById("login").addEventListener("click", loginOrLogout);
 document.getElementById("create-post").addEventListener("click", writeNewPost);
 
 
-getPosts();
 
 
-function login() {
+function loginOrLogout() {
 
     // https://firebase.google.com/docs/auth/web/google-signin
-    
+    var button= document.getElementById("login");
     // Provider
-    var provider = new firebase.auth.GoogleAuthProvider();
+    if (firebase.auth().currentUser == null) {
+        var provider = new firebase.auth.GoogleAuthProvider();
 
-    // How to Log In
-    
-	
-	  firebase.auth().signInWithPopup(provider)
-    .then(function () {
-       console.log(firebase.auth());
-
-    })
-    .catch(function () {
-      alert("Something went wrong");
-    });
+        // How to Log In
 
 
-
-   
+        firebase.auth().signInWithPopup(provider)
+            .then(function () {
+                console.log(firebase.auth());
+                button.innerHTML = "Logout";
+            }).then(function () {
+                getPosts();
+            })
+            .catch(function () {
+                alert("Wrong email");
+            });
+    } else if(firebase.auth().currentUser != null){
+        firebase.auth().signOut();
+        button.innerHTML = "Login";
+    }
 }
 
+//function conditions() {
+//    if (firebase.auth().currentUser == null) {
+//        alert("You must be logged")
+//    } else {
+//        document.getElementById("login").innerHTML = "Logout";
+//        //        firebase.auth().signOut();
+//    }
+//}
+//conditions();
 
 function writeNewPost() {
-
     // https://firebase.google.com/docs/database/web/read-and-write
 
     // Values
-    var text = document.getElementById("textInput").value;
+    var text = document.getElementById("newMessage").value;
     var userName = firebase.auth().currentUser.displayName;
-    
+    var photoProfile = firebase.auth().currentUser.photoURL;
 
     // A post entry
-    
+
     var post = {
         name: userName,
-        body: text  
+        photo: photoProfile,
+        body: text
     };
 
     // Get a key for a new Post.
-    var newPostKey = firebase.database().ref().child('ubiqum').push().key;
+    var newPostKey = firebase.database().ref().child('General').push().key;
 
     //Write data
     var updates = {};
     updates[newPostKey] = post;
-    
-    return firebase.database().ref('ubiqum').update(updates);
-    
-    
+    document.getElementById('newMessage').value = '';
+    return firebase.database().ref('General').update(updates);
 
-    
+
+
+
 }
 
 
 function getPosts() {
 
-     firebase.database().ref('ubiqum').on('value', function (data) {
-         
-         
-         var posts = document.getElementById("posts");
-         
-         posts.innerHTML = "";
+    firebase.database().ref('General').on('value', function (data) {
 
-         var messages = data.val();
 
-         for (var key in messages) {
-             var text = document.createElement("div");
-             var element = messages[key];
+        var posts = document.getElementById("posts");
 
-             text.append(element.body);
-             posts.append(text);
-         }
+        posts.innerHTML = "";
 
-     })
+        var messages = data.val();
 
-    console.log("getting posts");
+        for (var key in messages) {
+            var text = document.createElement("div");
+            var element = messages[key];
+
+            text.append(element.body);
+            posts.append(text);
+        }
+
+    })
 
 }
-
-
-
-
-
-
-
-
-
-// function login() {
-
-//     var provider = new firebase.auth.GoogleAuthProvider();
-
-//     firebase.auth().signInWithPopup(provider);
-//     console.log("Login!!");
-
-// }
-
-
-// function writeNewPost() {
-
-//     var text = document.getElementById("textInput").value;
-//     var userName = firebase.auth().currentUser.displayName;
-
-//     // A post entry.
-//     var postData = {
-//         name: userName,
-//         body: text
-//     };
-
-//     // Get a key for a new Post.
-//     var newPostKey = firebase.database().ref().child('myMessages').push().key;
-
-
-//     var updates = {};
-
-//     updates[newPostKey] = postData;
-
-//     firebase.database().ref().child('myMessages').update(updates);
-
-
-// }
-
-
-// function getPosts() {
-
-
-//     firebase.database().ref('myMessages').on('value', function (data) {
-//         var posts = document.getElementById("posts");
-//         posts.innerHTML = "";
-
-//         var posts = data.val();
-
-//         for (var key in posts) {
-//             var text = document.createElement("div");
-//             var element = posts[key];
-
-//             text.append(element.body);
-//             posts.append(text);
-//         }
-
-//     })
-// }
+//getPosts();
