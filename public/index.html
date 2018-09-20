@@ -22,6 +22,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
 </head>
 
 <body>
@@ -68,6 +69,7 @@
                 </div>
                 <div class="col-sm-6">
                     <h1>NYSL</h1>
+                    <p>Tap for going to menu</p>
                 </div>
             </div>
             <div class="searcher">
@@ -169,21 +171,23 @@
             </ul>
         </div>
         <div id="chatPage">
-
-            <button id="login" class="btn btn-block btn-primary">Login</button>
-
+            <div class="chatHeader">
+                <button id="buttonBacktoMenu" class="btn btn-block btn-primary" @click="changeAllPagesToMenu">Back to menu</button>
+                <button id="login" class="btn btn-block btn-primary">Login</button>
+            </div>
             <div class="chats" id="chat">
-                <div id="posts">YOU MUST BE LOGGED</div>
-                <input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
+                <div class="chata">
+                    <div id="posts">YOU MUST BE LOGGED</div>
+                </div>
+                <div class="chatInputButton">
+                    <input type="text" autocomplete="off" class="form-control" id="newMessage" placeholder="Enter Message">
 
-                <button id="create-post"  class="btn btn-primary">Send</button>
+                    <button id="create-post" class="btn btn-primary">Send</button>
+                </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
-    <script src="main.js"></script>
-    <script src="chat.js"></script>
     <script>
         // Initialize Firebase
         var config = {
@@ -197,6 +201,10 @@
         firebase.initializeApp(config);
 
     </script>
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+    <script src="main.js"></script>
+
+    <script src="chat.js"></script>
 </body>
 
 </html>

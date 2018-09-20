@@ -265,11 +265,109 @@
         padding-bottom: 10%;
         font-size: 130%;
     }
-    #posts{
-        width:100%;
-        height: 500px;
-            
+    .chatHeader{
+        display:flex;
     }
+    #buttonBacktoMenu{
+        padding: 5%;
+        font-weight: 600;
+        font-size: 100%;
+        
+        width:50%;
+        background-color: red;
+        margin: 3%;
+    }
+
+    #login {
+        padding: 5%;
+        font-weight: 600;
+        width: 50%;
+        font-size: 150%;
+        background-color: red;
+        margin: 3%;
+    }
+    .chata{
+        height: 450px;
+        overflow:auto;
+        border: 1px solid black;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        width: 92%;
+        padding: 5%;
+        font-size: 160%;
+        font-family: cursive;
+        font-weight: 600;
+        margin: 4% !important;
+        background-color: #ff000f40;
+    }
+    
+    #posts {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .chatInputButton {
+        padding: 3%;
+        display: flex;
+    }
+
+    .chatInputButton button {
+        background-color: red;
+        font-weight: 600;
+    }
+
+    .hostText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: aliceblue;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .guestText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: cornsilk;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+    .hostText p,
+    .guestText p{
+        margin-bottom:0px;
+    }
+
+    .hostText h1,
+    .guestText h1 {
+        font-size: 60%;
+    }
+
+    .hostText h2,
+    .guestText h2 {
+        font-size: 50%;
+        margin-top: 0px;
+        margin-right: 5%;
+        align-self: flex-end;
+    }
+
 }
 
 @media only screen and (min-width: 601px) and (max-width: 767px) {
@@ -427,17 +525,17 @@
     .menu {
         padding: 10%;
         list-style: none;
-        flex-wrap:wrap;
-        display:flex;
+        flex-wrap: wrap;
+        display: flex;
         width: 100%;
     }
 
     .menu li {
         padding: 5%;
         flex-direction: row;
-        flex-wrap:wrap;
-        display:flex;
-        width:50%;
+        flex-wrap: wrap;
+        display: flex;
+        width: 50%;
 
     }
 
@@ -562,6 +660,108 @@
         padding-bottom: 10%;
         font-size: 130%;
     }
+    .chatHeader{
+        height:90px;
+        display:flex;
+    }
+    #buttonBacktoMenu{
+        font-weight: 600;
+        font-size: 100%;   
+        width:50%;
+        background-color: red;
+        margin: 3%;
+    }
+
+    #login {
+        font-weight: 600;
+        width: 50%;
+        font-size: 150%;
+        background-color: red;
+        margin: 3%;
+    }
+    .chata{
+        height: 350px;
+        overflow:auto;
+        border: 1px solid black;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        width: 92%;
+        padding: 5%;
+        font-size: 160%;
+        font-family: cursive;
+        font-weight: 600;
+        margin: 4% !important;
+        background-color: #ff000f40;
+    }
+    
+    #posts {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .chatInputButton {
+        padding-top: 0px;
+        padding: 3%;
+        display: flex;
+    }
+
+    .chatInputButton button {
+        background-color: red;
+        font-weight: 600;
+    }
+
+    .hostText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: aliceblue;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .guestText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: cornsilk;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+    .hostText p,
+    .guestText p{
+        margin-bottom:0px;
+    }
+
+    .hostText h1,
+    .guestText h1 {
+        font-size: 60%;
+    }
+
+    .hostText h2,
+    .guestText h2 {
+        font-size: 50%;
+        margin-top: 0px;
+        margin-right: 5%;
+        align-self: flex-end;
+    }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -704,14 +904,14 @@
     }
 
     .menuTitle {
-        height:100px;
+        height: 100px;
         border-bottom: 5px solid black;
         justify-content: center;
         display: flex;
     }
 
     .menuTitle h1 {
-        font-size:350%;
+        font-size: 350%;
         font-weight: 900;
     }
 
@@ -835,11 +1035,12 @@
         flex-direction: column;
         display: flex;
     }
-    .date-time h1{
+
+    .date-time h1 {
         font-size: 150%;
     }
-    
-    .phonemail{
+
+    .phonemail {
         padding-left: 10%;
     }
 
@@ -848,7 +1049,8 @@
         font-weight: 800;
         font-size: 350%;
     }
-    .phone h1{
+
+    .phone h1 {
         font-size: 350%;
     }
 
@@ -858,12 +1060,126 @@
         padding-bottom: 10%;
         font-size: 330%;
     }
-    .email h1{
+
+    .email h1 {
         font-size: 350%;
     }
+    .chatHeader{
+        height: 200px;
+        display:flex;
+    }
+    #buttonBacktoMenu{
+        padding: 5%;
+        font-weight: 600;
+        font-size: 300%;
+        
+        width:50%;
+        background-color: red;
+        margin: 3%;
+    }
+
+    #login {
+        padding: 5%;
+        font-weight: 600;
+        width: 50%;
+        font-size: 350%;
+        background-color: red;
+        margin: 3%;
+    }
+    .chata{
+        height: 625px;
+        overflow:auto;
+        border: 1px solid black;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        width: 92%;
+        padding: 5%;
+        font-size: 160%;
+        font-family: cursive;
+        font-weight: 600;
+        margin: 4% !important;
+        background-color: #ff000f40;
+    }
+    
+    #posts {
+        flex-direction: column;
+        display: flex;
+        font-size:400%;
+    }
+
+    .chatInputButton {
+        padding: 3%;
+        display: flex;
+    }
+    .chatInputButton input{
+        font-size: 150%;
+        padding: 5%;
+        
+    }
+
+    .chatInputButton button {
+        background-color: red;
+        font-weight: 600;
+        padding:3%;
+        font-size:150%;
+    }
+
+    .hostText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: aliceblue;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .guestText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: cornsilk;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+    .hostText p,
+    .guestText p{
+        margin-bottom:0px;
+    }
+
+    .hostText h1,
+    .guestText h1 {
+        font-size: 60%;
+    }
+
+    .hostText h2,
+    .guestText h2 {
+        font-size: 50%;
+        margin-top: 0px;
+        margin-right: 5%;
+        align-self: flex-end;
+    }
+
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-        .containerLoader {
+    .containerLoader {
         position: absolute;
         top: 0;
         left: 0;
@@ -1002,14 +1318,14 @@
     }
 
     .menuTitle {
-        height:100px;
+        height: 100px;
         border-bottom: 5px solid black;
         justify-content: center;
         display: flex;
     }
 
     .menuTitle h1 {
-        font-size:350%;
+        font-size: 350%;
         font-weight: 900;
     }
 
@@ -1133,11 +1449,12 @@
         flex-direction: column;
         display: flex;
     }
-    .date-time h1{
+
+    .date-time h1 {
         font-size: 150%;
     }
-    
-    .phonemail{
+
+    .phonemail {
         padding-left: 10%;
     }
 
@@ -1146,7 +1463,8 @@
         font-weight: 800;
         font-size: 350%;
     }
-    .phone h1{
+
+    .phone h1 {
         font-size: 350%;
     }
 
@@ -1156,12 +1474,128 @@
         padding-bottom: 10%;
         font-size: 330%;
     }
-    .email h1{
+
+    .email h1 {
         font-size: 350%;
     }
-} 
+    .chatHeader{
+        height: 200px;
+        display:flex;
+    }
+    #buttonBacktoMenu{
+        padding: 5%;
+        font-weight: 600;
+        font-size: 250%;
+        width:50%;
+        background-color: red;
+        margin: 3%;
+    }
+
+    #login {
+        padding: 5%;
+        font-weight: 600;
+        width: 50%;
+        font-size: 300%;
+        background-color: red;
+        margin: 3%;
+        align-content: center;
+        justify-content: center;
+        display:flex;
+    }
+    .chata{
+        height: 625px;
+        overflow:auto;
+        border: 1px solid black;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        width: 92%;
+        padding: 5%;
+        font-size: 160%;
+        font-family: cursive;
+        font-weight: 600;
+        margin: 4% !important;
+        background-color: #ff000f40;
+    }
+    
+    #posts {
+        flex-direction: column;
+        display: flex;
+        font-size:500%;
+    }
+
+    .chatInputButton {
+        padding: 3%;
+        display: flex;
+    }
+    .chatInputButton input{
+        font-size: 150%;
+        padding: 5%;
+        
+    }
+
+    .chatInputButton button {
+        background-color: red;
+        font-weight: 600;
+        padding:3%;
+        font-size:150%;
+    }
+
+    .hostText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: aliceblue;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .guestText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: cornsilk;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+    .hostText p,
+    .guestText p{
+        margin-bottom:0px;
+    }
+
+    .hostText h1,
+    .guestText h1 {
+        font-size: 60%;
+    }
+
+    .hostText h2,
+    .guestText h2 {
+        font-size: 50%;
+        margin-top: 0px;
+        margin-right: 5%;
+        align-self: flex-end;
+    }
+
+}
+
 @media only screen and (min-width: 1200px) {
-            .containerLoader {
+    .containerLoader {
         position: absolute;
         top: 0;
         left: 0;
@@ -1300,14 +1734,14 @@
     }
 
     .menuTitle {
-        height:100px;
+        height: 100px;
         border-bottom: 5px solid black;
         justify-content: center;
         display: flex;
     }
 
     .menuTitle h1 {
-        font-size:350%;
+        font-size: 350%;
         font-weight: 900;
     }
 
@@ -1431,11 +1865,12 @@
         flex-direction: column;
         display: flex;
     }
-    .date-time h1{
+
+    .date-time h1 {
         font-size: 150%;
     }
-    
-    .phonemail{
+
+    .phonemail {
         padding-left: 10%;
     }
 
@@ -1444,7 +1879,8 @@
         font-weight: 800;
         font-size: 350%;
     }
-    .phone h1{
+
+    .phone h1 {
         font-size: 350%;
     }
 
@@ -1454,7 +1890,122 @@
         padding-bottom: 10%;
         font-size: 330%;
     }
-    .email h1{
+
+    .email h1 {
         font-size: 350%;
     }
+     .chatHeader{
+        height: 200px;
+        display:flex;
+    }
+    #buttonBacktoMenu{
+        padding: 5%;
+        font-weight: 600;
+        font-size: 250%;
+        width:50%;
+        background-color: red;
+        margin: 3%;
+    }
+
+    #login {
+        padding: 5%;
+        font-weight: 600;
+        width: 50%;
+        font-size: 300%;
+        background-color: red;
+        margin: 3%;
+        align-content: center;
+        justify-content: center;
+        display:flex;
+    }
+    .chata{
+        height: 625px;
+        overflow:auto;
+        border: 1px solid black;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        width: 92%;
+        padding: 5%;
+        font-size: 160%;
+        font-family: cursive;
+        font-weight: 600;
+        margin: 4% !important;
+        background-color: #ff000f40;
+    }
+    
+    #posts {
+        flex-direction: column;
+        display: flex;
+        font-size:500%;
+    }
+
+    .chatInputButton {
+        padding: 3%;
+        display: flex;
+    }
+    .chatInputButton input{
+        font-size: 150%;
+        padding: 5%;
+        
+    }
+
+    .chatInputButton button {
+        background-color: red;
+        font-weight: 600;
+        padding:3%;
+        font-size:150%;
+    }
+
+    .hostText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: aliceblue;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .guestText {
+        border-color: #f5e9f5;
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0, 0, 0, 0.75);
+        background-color: cornsilk;
+        padding-left: 5%;
+        margin-bottom: 2%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+    .hostText p,
+    .guestText p{
+        margin-bottom:0px;
+    }
+
+    .hostText h1,
+    .guestText h1 {
+        font-size: 60%;
+    }
+
+    .hostText h2,
+    .guestText h2 {
+        font-size: 50%;
+        margin-top: 0px;
+        margin-right: 5%;
+        align-self: flex-end;
+    }
+
 }
